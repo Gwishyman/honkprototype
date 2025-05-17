@@ -1,1 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FakeTok</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      background-color: black;
+      height: 100%;
+      overflow: hidden;
+    }
 
+    video {
+      height: 100vh;
+      width: auto;
+      object-fit: cover;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .overlay {
+      position: absolute;
+      bottom: 30px;
+      left: 20px;
+      color: white;
+      font-family: sans-serif;
+    }
+
+    .username {
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .caption {
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <video autoplay muted loop playsinline>
+    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <div class="overlay">
+    <div class="username">@gwishyman</div>
+    <div class="caption">lorem ipsum</div>
+  </div>
+
+</body>
+</html>
