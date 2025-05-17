@@ -9,46 +9,71 @@
       justify-content: center;
       align-items: center;
       height: 100vh;
-      background-color: #f4f4f4;
-      font-family: Arial, sans-serif;
+      margin: 0;
+      background: linear-gradient(to right, #000000, #111111);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #fff;
     }
 
     .login-box {
-      background: white;
-      padding: 40px;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      background-color: #1c1c1c;
+      padding: 60px 50px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.8);
       text-align: center;
+      width: 400px;
+    }
+
+    .login-box h2 {
+      font-size: 32px;
+      margin-bottom: 30px;
+      color: #fff;
     }
 
     input {
       display: block;
       width: 100%;
-      padding: 10px;
-      margin: 15px 0;
-      border: 1px solid #ccc;
-      border-radius: 5px;
+      padding: 15px;
+      margin: 20px 0;
+      border: none;
+      border-radius: 10px;
+      font-size: 18px;
+      background-color: #333;
+      color: white;
+    }
+
+    input::placeholder {
+      color: #999;
     }
 
     button {
-      padding: 10px 20px;
-      background-color: #007bff;
+      padding: 15px 30px;
+      font-size: 20px;
+      background-color: #fe2c55;
       color: white;
       border: none;
-      border-radius: 5px;
+      border-radius: 10px;
       cursor: pointer;
+      width: 100%;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background-color: #ff4d6d;
     }
 
     .error {
-      color: red;
-      margin-top: 10px;
+      color: #ff6666;
+      margin-top: 20px;
+      font-size: 16px;
     }
   </style>
 </head>
 <body>
 
 <div class="login-box">
-  <h2>Login</h2>
+  <h2>Login to Continue</h2>
+  <h4>Prototype by Gwishyman</h4>
   <input type="text" id="username" placeholder="Username">
   <input type="password" id="password" placeholder="Password">
   <button onclick="login()">Login</button>
@@ -61,10 +86,10 @@
     const pass = document.getElementById('password').value;
 
     if (user === 'Admin' && pass === 'Root') {
-      alert('Login successful!');
-      // Redirect or show content
+      document.getElementById('error').innerText = 'Logging in...';
+      window.location.href = 'gwishyman.github.io/honkprototype/honk.html'; // redirect to the video page
     } else {
-      document.getElementById('error').innerText = 'Invalid credentials';
+      document.getElementById('error').innerText = 'Incorrect username or password;
     }
   }
 </script>
